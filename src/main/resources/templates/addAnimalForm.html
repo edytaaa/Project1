@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Animals</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+</head>
+
+
+<body style="margin-left: 250px; margin-right: 250px; margin-top: 40px; margin-bottom: 40px">
+<form action="/addAnimal" method="post" th:object="${newAnimal}">
+    <div class="form-group row">
+        <label for="inputText1" class="col-sm-2 col-form-label"> Nazwa:</label>
+        <div class="col-sm-10">
+            <select th:field="*{name}" class="form-control" id="inputText1" placeholder="Nazwa">
+                <option value="default">Wybierz..</option>
+                <option value="pies">pies</option>
+                <option value="kot">kot</option>
+                <option value="mysz">mysz</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputText2" class="col-sm-2 col-form-label"> Opis:</label>
+        <div class="col-sm-10">
+            <input th:field="*{desc}" class="form-control" id="inputText2" placeholder="Opis">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="inputImg" class="col-sm-2 col-form-label"> Link do obrazka:</label>
+        <div class="col-sm-10">
+            <input th:field="*{img}" class="form-control" id="inputImg" placeholder="Link do obrazka">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj</button>
+</form>
+</body>
+</html>
